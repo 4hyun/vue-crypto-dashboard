@@ -30,6 +30,7 @@ export default function (url, opts) {
   };
 
   self.reconnect = e => {
+//* for each socket instance, keep tract of reconnect count
     (num++ < max) ? setTimeout(() => {
       (opts.onreconnect || noop)(e);
       self.open();
